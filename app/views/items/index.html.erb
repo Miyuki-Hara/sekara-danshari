@@ -1,60 +1,139 @@
-    <header class="py-4">
-      <div class="container text-center">
-        <!-- ↓あとで[img class="mw-100"とrootリンク入れる -->
-        <h1>sekara 断捨離</h1>
-      </div>
-    </header>
+<header class="py-4">
+  <div class="container text-center">
+    <!-- ↓あとで[img class="mw-100"とrootリンク入れる -->
+    <h1>sekara 断捨離</h1>
+  </div>
+</header>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticku-top">
-      <div class="container">
-        <!-- ↓あとで[a]は全てrootリンクに変更 -->
-        <a class="navbar-brad" href="index.html.erb">sekara 断捨離</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="cllapse" data-bs-target="#navbar-content" aria-controls="nvbar-content" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-content">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">新規登録<span class="visually-hidden">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ログイン</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">最新の断捨離</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">質問コーナー</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link btn btn-info text-dark">お問い合わせ</a>
-            </li>
-          </ul>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticku-top">
+  <div class="container">
+    <!-- ↓あとで[a]は全てrootリンクに変更 -->
+    <a class="navbar-brad" href="index.html.erb">sekara 断捨離</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="cllapse" data-bs-target="#navbar-content" aria-controls="nvbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">新規登録<span class="visually-hidden">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ログイン</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">最新の断捨離</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">質問コーナー</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link btn btn-info text-dark">お問い合わせ</a>
+        </li>
+      </ul>
+    </div>
+    <ul class=“navbar-nav me-auto”>
+      <li class=“nav-item active”>
+      <li class=“nav-item dropdown”>
+        <a class=“nav-link dropdown-toggle” href=“#” id=“navbarDropdown” role=“button” data-bs-toggle=“dropdown” aria-has pop up=“true” aria-expanded=“false”>
+        </a>
+        <div class=“dropdown-menu” aria-labelledby=“navbarDropdown”>
+          <a class=“dropdown-item” href=“#”> お店</a>
+          <a class=“dropdown-item” href=“#”>アクセス</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<div class="py-4">
+  <div class="container">
+    <div id="main_visual" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-bs-target="#main_visual" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#main_visual" data-bs-slide-to="1"></li>
+        <li data-bs-target="#main_visual" data-bs-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="img-fluid" src="/app/assets/images/carousel_01.jpg" alt="片付け">
+          <div class="carousel-caption d-note d-md-block">
+            <h2>片さなくちゃいけないのに…</h2>
+            <p>家の中、クローゼットの中、たくさんのストックたち…。片付けようと思っても「手離してしまって大丈夫か」、「ストックがなくて大丈夫か」不安でものが減らない。
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="img-fluid" src="img/slide_02.jpg" alt="増加">
+          <div class="carousel-caption d-note d-md-block">
+            <h2>いつの間にか増えていくもの…</h2>
+            <p>捨てられないショップバッグ、ついついいつの間にか増えていくポイントカード、通信販売の段ボールたち。気が付いたらたくさんある。</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="img-fluid" src="img/slide_03.jpg" alt="不用品">
+          <div class="carousel-caption d-note d-md-block">
+            <h2>今は使ってないけれど手離せない…</h2>
+            <p>いつかまたやろうと思っている。思い出のものだから。高かったから。そんな理由で手放せないものがある。</p>
+          </div>
         </div>
       </div>
-    </nav>
 
-    <main>
+      <a class="carousel-control-prev" href="#main_visual" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">前に戻る</span>
+      </a>
+      <a class="carousel-sontrol-next" href="#main_visual" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">次に進む</span>
+      </a>
+    </div>
+  </div>
+</div>
 
-      <div class="py-4">
-      </div>
 
-      <div class="py-4">
-      </div>
 
-      <div class="py-4">
+<!— コラム欄 —>
+<div class=“pay-4”>
+  <section id=“column”>
+    <div class=“container”>
+      <div class=“row”>
+	  <div class=“col-md-2”>
+	    <h3>お片付けto do</h3>
       </div>
+      <div class=“col-md-10”>
+	  <dl class=“row”>
+	    <dt class=“col-md-3”>1日1回 5分で良いので部屋の中を整えましょう。</dt>
+	    <dt class=“col-md-3”>今回片付けると決めた場所のものは全て出して持ち物の見直しましょう。</dt>
+	    <dt class-“col-md-3”>1度に片付ける場所を絞りましょう。いきなり全部やろうとすると収拾がつかなくなります。</dt>
+	  </do>
+      </div>
+    </div>
+</div>
 
-      <div class="py-4">
+<!— 閲覧・投稿欄 —>
+<div class=“pay-4 big-light”>
+  <section id=“todo”>
+    <div class=“container”>
+      <div class=“row mb-4”>
+        <div class=“col-md-8 mb-3”>
+        </div>
+        <div class=“col-md-4”>
+        </div>
       </div>
+      <div class=“row”>
+        <div class=“col-md-4”>
+        </div>
+        <div class=“col-md-4”>
+        </div>
+        <div class=“col-md-4”>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
-      <div class="py-4">
-      </div>
-      
-      <div class="py-4">
-      </div>
 
     </main>
 
