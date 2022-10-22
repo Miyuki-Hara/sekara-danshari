@@ -1,3 +1,180 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<header class="py-4">
+  <div class="container text-center">
+    <!-- ↓あとで[img class="mw-100"とrootリンク入れる -->
+    <h1>sekara　断捨離</h1>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark bg-gradient sticku-top">
+  <div class="container">
+    <!-- ↓あとで[a]は全てrootリンクに変更 -->
+    <a class="navbar-brad" href="index.html.erb">sekara 断捨離</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="cllapse" data-bs-target="#navbar-content" aria-controls="nvbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">新規登録<span class="visually-hidden">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ログイン</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">最新の断捨離</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">質問コーナー</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link btn btn-info text-dark">お問い合わせ</a>
+        </li>
+      </ul>
+    </div>
+    <ul class=“navbar-nav me-auto”>
+      <li class=“nav-item active”>
+      <li class=“nav-item dropdown”>
+        <a class=“nav-link dropdown-toggle” href=“#” id=“navbarDropdown” role=“button” data-bs-toggle=“dropdown” aria-has pop up=“true” aria-expanded=“false”>
+        </a>
+        <div class=“dropdown-menu” aria-labelledby=“navbarDropdown”>
+          <a class=“dropdown-item” href=“#”> お店</a>
+          <a class=“dropdown-item” href=“#”>アクセス</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<div class="py-4">
+  <div class="container">
+    <div id="main_visual" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-bs-target="#main_visual" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#main_visual" data-bs-slide-to="1"></li>
+        <li data-bs-target="#main_visual" data-bs-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="img-fluid" src="../assets/slide_01.png" alt="片付け">
+          <div class="carousel-caption d-note d-md-block">
+            <h2 class="text-success bg-white bg-opacity-50"><strong>片付けなくちゃいけないのに…</strong></h2>
+            <p class="text-success bg-white bg-opacity-50"><strong>片付けようと思っても「手離してしまって大丈夫か」、「ストックがなくて大丈夫か」と不安で結局手離せない。</strong></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="img-fluid" src="../assets/slide_02.png" alt="増加">
+          <div class="carousel-caption d-note d-md-block">
+            <h2 class="text-success bg-white bg-opacity-50"><strong>いつの間にか増えていくもの…</strong></h2>
+            <p class="text-success bg-white bg-opacity-50"><strong>捨てられないショップバッグ、ついつい増えていくポイントカード、通信販売の段ボール。気が付いたらたくさんある。</strong></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="img-fluid" src="../assets/slide_03.png" alt="不用品">
+          <div class="carousel-caption d-note d-md-block">
+            <h2 class="text-success bg-white bg-opacity-50"><strong>今は使ってないけれど手離せない…</strong></h2>
+            <p class="text-success bg-white bg-opacity-50"><strong>いつかまたやろうと思っている。思い出のものだから。高かったから。そんな理由で手離せないものがある。</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#main_visual" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">前に戻る</span>
+      </a>
+      <a class="carousel-control-next" href="#main_visual" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">次に進む</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+<!— コラム欄 —>
+<div class="pay-4">
+  <section id="column">
+    <div class="container">
+      <div class="row">
+    <div class="col-md-9">
+      <h3>そんな悩みがあるのなら…まずはじめてみませんか？</h3>
+      </div>
+      <div class="col-md-10">
+    <dl class="row">
+      <dd class="col-md-9">■　1日1回、5分で良いので部屋の中を整えましょう。</dd>
+      <dd class="col-md-9">■　今回片付けると決めた場所のものは全て出して持ち物の見直しましょう。</dd>
+      <dd class="col-md-9">■　一度に片付ける場所を絞りましょう。いきなり全部やろうとすると収拾がつかなくなります。</dd>
+    </dl>
+      </div>
+    </div>
+</div>
+
+<!— 閲覧・投稿欄 —>
+<div class="py-4 bg-light">
+  <section id="about">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-8 mb-3">
+          <h3 class="mb-3">断捨離の記録を共有しませんか？</h3>
+          <p>ものを手離すと決めたら、手離したものを投稿してあなたの断捨離の軌跡を残しませんか？</p>
+          <p>あなたの記録が誰かの助けになるかもしれません。</p>
+          <p>手離すのを迷ったら、ほかの人が手離したものをみてみましょう。</p>
+          <p>何を、どうして、どんな方法で手離したのか参考になるかもしれません。</p>
+          <a href="#" class="btn btn-info shadow">みんなの記録を見る</a>
+          <a href="#" class="btn btn-info shadow">自分の記録を残す</a>
+        </div>
+        <div class="col-md-4">
+          <img src="../assets/slide_05.png" alt="整理整頓" class="img-fluid">
+        </div>
+      </div>
+
+      <div class=“row”>
+        <div class=“col-md-4”>
+          <div class="card mv-3">
+            <img >
+
+        </div>
+        <div class=“col-md-4”>
+        </div>
+        <div class=“col-md-4”>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+</main>
+
+<footer class="py-4 bg-dark bg-gradient text-light">
+  <div class="container text-center">
+    <ul class="nav justify-content-center mb-3">
+      <li class="nav-item">
+        <a class="nav-link" href="#">ホーム</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">新着</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">利用規約</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">プライバシーポリシー</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">お問い合わせ</a>
+      </li>
+    </ul>
+    <p>
+      <small>Copyright &copy;2022 sekara　断捨離, All Rights Reserved.</small>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
+
 <%= link_to "最終確認ボタン", "#", class: "btn btn-primary" %>
