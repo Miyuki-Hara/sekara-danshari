@@ -1,0 +1,38 @@
+<header class="py-4">
+  <div class="container text-center">
+    <!-- ↓あとで[img class="mw-100"とrootリンク入れる -->
+    <h1>sekara　断捨離</h1>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark bg-gradient sticku-top">
+  <div class="container">
+    <!-- ↓あとで[a]は全てrootリンクに変更 -->
+    <a class="navbar-brad" href="index.html.erb">ホーム</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="cllapse" data-bs-target="#navbar-content" aria-controls="nvbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">最新の断捨離</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">お問い合わせ</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <div>
+        <% if user_signed_in? %>
+          <li class="btn btn-light"><%=link_to current_user.nickname, "/users/#{current_user.id}", class: "text-dark text-decoration-none" %></li>
+          <li class="btn btn-light"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "text-dark text-decoration-none" %></li>
+        <% else %>
+          <li class="btn btn-light"><%=link_to '新規登録', new_user_registration_path, class: "text-dark text-decoration-none" %></li>
+          <li class="btn btn-light"><%= link_to 'ログイン', new_user_session_path, class: "text-dark text-decoration-none" %></li>
+        <% end %>
+        </div>
+      </ul>
+    </div>
+    
+  </div>
+</nav>
