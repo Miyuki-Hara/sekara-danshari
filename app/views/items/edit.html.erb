@@ -2,7 +2,7 @@
 
 <div class="items-sell-contents">
   <div class="items-sell-main">
-    <h2 class="items-sell-title">断捨離の情報を入力</h2>
+    <h2 class="items-sell-title">断捨離の情報を編集</h2>
     <%= form_with model: @item, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -15,7 +15,7 @@
       </div>
       <div class="click-upload">
         <p>
-          クリックしてファイルをアップロード
+          クリックしてファイルをアップロード（変更しない場合は不要）
         </p>
         <%= f.file_field :image, id:"item-image" %>
       </div>
@@ -90,10 +90,10 @@
       <%# /注意書き %>
       <%# 下部ボタン %>
       <div class="sell-btn-contents">
-        <%= f.submit "登録する" ,class:"sell-btn" %>
-        <%=link_to 'もどる', root_path, class:"back-btn" %>
+        <%= f.submit "変更する" ,class:"sell-btn" %>
+        <%=link_to 'もどる', item_path, class:"back-btn" %>
       </div>
-      <%# /下部ボタン %>
+    <%# /下部ボタン %>
     <% end %>
     </div>
   </div>

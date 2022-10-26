@@ -1,7 +1,7 @@
 <header class="py-4">
   <div class="container text-center">
     <!-- ↓あとで[img class="mw-100"とrootリンク入れる -->
-    <h1>sekara　断捨離</h1>
+    <h1><%= link_to 'sekara　断捨離', root_path, class: "text-dark text-decoration-none" %></h1>
   </div>
 </header>
 
@@ -15,10 +15,10 @@
     <div class="collapse navbar-collapse" id="navbar-content">
       <ul class="navbar-nav me-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">最新の断捨離</a>
+          <%= link_to '最新の断捨離記録', root_path(anchor: "view"), class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">お問い合わせ</a>
+          <a class="nav-link" href="#">手離し方参考リンク集</a>
         </li>
       </ul>
       <ul class="navbar-nav">
