@@ -7,6 +7,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :let_go_reason_id, null: false
       t.integer :result_id,        null: false
       t.text    :comment
+      t.references :user,          null: false, foreign_key: true
 
       t.timestamps
     end

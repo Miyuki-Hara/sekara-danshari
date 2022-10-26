@@ -19,10 +19,9 @@ class Item < ApplicationRecord
     validates :result_id
   end
 
-  with_options numericality: { other_than: 2 } do
+  with_options numericality: { other_than: 1 } do
     validates :category_id
     validates :let_go_way_id
     validates :let_go_reason_id
   end
-
 end
