@@ -1,0 +1,51 @@
+<%= render "shared/header" %>
+
+<%# 断捨離記録の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @item.name %>
+    </h2>
+    <div class="item-img-content">
+      <%= image_tag @item.image.variant(resize: '500x500') ,class:"item-box-img" %>
+    </div>
+
+    <div class="item-explain-box">
+      <span><%= @item.comment %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">投稿者</th>
+          <td class="detail-value"><%= @item.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @item.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">手離し方</th>
+          <td class="detail-value"><%= @item.let_go_way.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">手離した理由</th>
+          <td class="detail-value"><%= @item.let_go_reason.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">手離した結果</th>
+          <td class="detail-value"><%= @item.result.name %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <% if user_signed_in? %>
+      <% if current_user.id == @item.user_id %>
+      <ul>
+        <li class="btn btn-lg btn-info shadow mx-5"><%= link_to "記録の編集", edit_item_path, method: :get, class: "text-dark text-decoration-none" %></li>
+        <li class="btn btn-lg btn-danger shadow mx-5"><%= link_to "削 除", item_path, method: :delete, class: "text-dark text-decoration-none" %></li>
+      <ul>
+      <% end %>
+    <% end %>
+  <%# /商品の概要 %>
+</div>
+

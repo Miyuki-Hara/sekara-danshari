@@ -22,7 +22,7 @@
 .item-box>.name {
   text-align: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .item-box-img {
@@ -88,7 +88,7 @@
   width: 20%;
   background-color: #eee;
   border: 1px solid #dedede;
-  font-size: 14px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -96,7 +96,7 @@
   width: 80%;
   padding: 20px;
   border: 1px solid #dedede;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .option {
