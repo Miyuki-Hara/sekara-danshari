@@ -75,8 +75,10 @@
           <p>あなたの記録が誰かの助けになるかもしれません。</p>
           <p>手離すのを迷ったら、ほかの人が手離したものをみてみましょう。</p>
           <p>何を、どうして、どんな方法で手離したのか参考になるかもしれません。</p>
-          <a href="#" class="btn btn-info shadow">みんなの記録を見る</a>
-          <a href="#" class="btn btn-info shadow">自分の記録を残す</a>
+          <ul>
+            <li class="btn btn-info shadow"><%=link_to 'みんなの記録を見る', root_path(anchor: "view"), class: "text-dark text-decoration-none" %></li>
+            <li class="btn btn-info shadow"><%=link_to '自分の記録を残す', new_item_path, class: "text-dark text-decoration-none" %></li>
+          </ul>
         </div>
         <div class="col-md-4">
           <img src="../assets/slide_05.png" alt="整理整頓" class="img-fluid">
@@ -98,8 +100,40 @@
   </section>
 </div>
 
-<%= link_to(new_item_path, class: 'purchase-btn') do %>
-  <span class='purchase-btn-text'>投稿する</span>
+<%# 断捨離記録一覧 %>
+  <div class='item-contents', id="view">
+    <h2 class='title'>みんなの断捨離</h2>
+    <div class="subtitle" >
+      最新の断捨離
+    </div>
+    <ul class='item-lists'>
+
+    <% @items.each do |item| %>
+      <li class='list'>
+        <%= link_to item_path(item) do %>
+        <div class='item-img-content'>
+        <%= image_tag item.image.variant(resize: '500x500'), class: "item-img" if item.image.attached? %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= item.name %>
+          </h3>
+          <div class='item-price'>
+            <span>手離し方：<%= item.let_go_way.name %></span>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+  <%# /商品一覧 %>
+</div>
+
+
+
+<%= link_to(new_item_path, class: 'purchase-btn text-decoration-none') do %>
+  <span class='purchase-btn-text '>投稿する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 <% end %>
 
