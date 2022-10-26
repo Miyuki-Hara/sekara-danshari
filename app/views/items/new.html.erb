@@ -1,0 +1,104 @@
+
+  
+  <%= render "shared/second-header"%>
+
+<div class="items-sell-contents">
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">断捨離の情報を入力</h2>
+    <%= form_with model: @item, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /画像 %>
+    <%# 名前 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        名前
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"名前（必須 40文字まで)", maxlength:"40" %>
+    </div>
+    <%# /名前 %>
+
+    <%# 詳細情報 %>
+    <div class="items-detail">
+      <div class="weight-bold-text">詳細情報</div>
+        <div class="form">
+          <div class="weight-bold-text">
+            カテゴリー
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        
+          <div class="weight-bold-text">
+            手離し方
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:let_go_way_id, LetGoWay.all, :id, :name, {}, {class:"select-box", id:"item-let-go-way"}) %>
+      
+          <div class="weight-bold-text">
+            手離した理由
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:let_go_reason_id, LetGoReason.all, :id, :name, {}, {class:"select-box", id:"item-let-go-reason"}) %>
+
+          <div class="weight-bold-text">
+            手離した結果
+            <span class="indispensable">期日選択可</span>
+          </div>
+          <%= f.collection_select(:result_id, Result.all, :id, :name, {}, {class:"select-box", id:"item-result"}) %>
+        </div>
+      </div>
+      <%# /詳細情報 %>
+      <%# コメント %>
+      <div class="mew-items">
+        <div class="items-explain">
+          <div class="weight-bold-text">
+            コメント
+          <span class="indispensable">任意</span>
+          </div>
+          <%= f.text_area :comment, class:"items-text", id:"item-info", placeholder:"コメント" ,rows:"7" ,maxlength:"1000" %>
+        </div>
+      <div>
+      <%# /コメント %>
+
+      <%# 注意書き %>
+      <div class="caution">
+        <p class="sentence">
+        様々な方の目に触れる可能性があります。
+        </p>
+        <p class="sentence">
+          他の方を不快にする物品の登録はお控えください。
+        </p>
+        <p class="sentence">
+          必ず、
+          <a href="#">利用規約</a>
+          をご確認の上でご登録ください。
+        </p>
+      </div>
+      <%# /注意書き %>
+      <%# 下部ボタン %>
+      <div class="sell-btn-contents">
+        <%= f.submit "出品する" ,class:"sell-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
