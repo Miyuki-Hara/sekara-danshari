@@ -102,3 +102,13 @@
   text-decoration: none;
   color: #333333;
 }
+
+.search-form {
+  text-align: center;
+}
+
+.search-form .search-input {
+  width: 30%;
+  margin-right: 10px;
+  text-align: center;
+}

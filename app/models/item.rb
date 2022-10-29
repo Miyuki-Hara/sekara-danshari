@@ -24,4 +24,13 @@ class Item < ApplicationRecord
     validates :let_go_way_id
     validates :let_go_reason_id
   end
+
+  def self.search(search)
+    if search != ""
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
 end

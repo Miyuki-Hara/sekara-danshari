@@ -1,0 +1,8 @@
+<%= render "shared/header" %>
+
+<div>
+  <% @items.each do |item| %>
+    <%= render partial: "item", locals: { item: item } %>
+  <% end %>
+
+<%= render "shared/footer" %>

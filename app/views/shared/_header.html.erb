@@ -8,7 +8,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-gradient sticku-top">
   <div class="container">
     <!-- ↓あとで[a]は全てrootリンクに変更 -->
-    <a class="navbar-brad" href="index.html.erb">ホーム</a>
+    <%= link_to 'ホーム', root_path, class: "navbar-brad"%>
     <button class="navbar-toggler" type="button" data-bs-toggle="cllapse" data-bs-target="#navbar-content" aria-controls="nvbar-content" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,13 +21,14 @@
           <a class="nav-link" href="#">手離し方参考リンク集</a>
         </li>
       </ul>
+
       <ul class="navbar-nav">
         <div>
         <% if user_signed_in? %>
-          <li class="btn btn-light"><%=link_to current_user.nickname, "/users/#{current_user.id}", class: "text-dark text-decoration-none" %></li>
+          <li class="btn btn-light mx-3"><%=link_to current_user.nickname, "/users/#{current_user.id}", class: "text-dark text-decoration-none" %></li>
           <li class="btn btn-light"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "text-dark text-decoration-none" %></li>
         <% else %>
-          <li class="btn btn-light"><%=link_to '新規登録', new_user_registration_path, class: "text-dark text-decoration-none" %></li>
+          <li class="btn btn-light mx-3"><%=link_to '新規登録', new_user_registration_path, class: "text-dark text-decoration-none" %></li>
           <li class="btn btn-light"><%= link_to 'ログイン', new_user_session_path, class: "text-dark text-decoration-none" %></li>
         <% end %>
         </div>
@@ -36,3 +37,10 @@
     
   </div>
 </nav>
+
+<div class="mx-3 my-3 float-right">
+        <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "断捨離記録を検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "btn btn-info" %>
+        <% end %>
+</div>
