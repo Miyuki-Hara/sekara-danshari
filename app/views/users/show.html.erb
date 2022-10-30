@@ -1,0 +1,48 @@
+<%= render "shared/second-header"%>
+
+<div class="">
+  <div class="">
+    <div class="">
+      <h2 class="">
+        <%= "#{@user.nickname}さんの情報" %>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">プロフィール</th>
+            <td class="table__col2"><%= @user.profile %></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      </div>
+      </div>
+
+<div class='item-contents', id="view">
+  <h2 class='title'><%= @nickname %>さんのマイページ</h2>
+    <ul class='item-lists'>
+    <% @items.each do |item| %>
+      <li class='list'>
+        <%= link_to item_path(item) do %>
+        <div class='item-img-content'>
+        <%= image_tag item.image.variant(resize: '500x500'), class: "item-img" if item.image.attached? %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= item.name %>
+          </h3>
+          <div class='item-price'>
+            <span>手離し方：<%= item.let_go_way.name %></span>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= render "shared/footer" %>

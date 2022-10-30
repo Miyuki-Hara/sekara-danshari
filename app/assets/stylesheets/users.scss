@@ -1,0 +1,39 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+.user__wrapper{
+  min-height: calc(100vh - 161px);
+}
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 50%;
+}
+.table__col1{
+  text-align: left;
+  font-weight: bold;
+  background: #fafafa;
+  border-collapse: collapse;
+  border: 1px solid #fafafa;
+  width: 10%;
+  padding: 8px;
+  text-align: center;
+}
+.table__col2{
+  text-align: left;
+  border: 1px solid #fafafa;
+  border-collapse: collapse;
+  width: 90%;
+  padding: 16px 8px;
+  font-size: 20px;
+}
+.user__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
