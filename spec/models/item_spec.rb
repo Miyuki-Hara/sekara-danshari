@@ -57,7 +57,7 @@ RSpec.describe Item, type: :model do
       it 'categoryが---だと登録できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 1")
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
       it 'let_go_wayが空だと登録できない' do
         @item.let_go_way_id = ''
@@ -67,7 +67,7 @@ RSpec.describe Item, type: :model do
       it 'let_go_wayが---だと登録できない' do
         @item.let_go_way_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Let go way must be other than 1")
+        expect(@item.errors.full_messages).to include('Let go way must be other than 1')
       end
       it 'let_go_reasonが空だと登録できない' do
         @item.let_go_reason_id = ''
@@ -77,7 +77,7 @@ RSpec.describe Item, type: :model do
       it 'let_go_reasonが---だと登録できない' do
         @item.let_go_reason_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Let go reason must be other than 1")
+        expect(@item.errors.full_messages).to include('Let go reason must be other than 1')
       end
     end
   end
