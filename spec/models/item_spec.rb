@@ -20,7 +20,7 @@ RSpec.describe Item, type: :model do
         expect(@item).to be_valid
       end
       it 'let_go_reasonが---以外であれば登録できる' do
-        @item.let_go_reasom_id = 2
+        @item.let_go_reason_id = 2
         expect(@item).to be_valid
       end
       it 'resultは---でも登録できる' do
@@ -65,7 +65,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Let go way can't be blank")
       end
       it 'let_go_wayが---だと登録できない' do
-        @item.status_id = 1
+        @item.let_go_way_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Let go way must be other than 1")
       end
