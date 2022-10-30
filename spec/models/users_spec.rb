@@ -14,6 +14,10 @@ RSpec.describe User, type: :model do
         @user.password = '123abc'
         @user.password_confirmation = '123abc'
       end
+      it 'profileが空でも登録できる' do
+        @user.profile = ''
+        expect(@user).to be_valid
+      end
     end
 
     context '新規登録できないとき' do

@@ -6,8 +6,7 @@ class LetGoReason < ActiveHash::Base
     { id: 4, name: '使い勝手が悪い' },
     { id: 5, name: '壊れた' },
     { id: 6, name: '入れ替え' },
-    { id: 7, name: '明らかにゴミ' },
-    { id: 8, name: 'その他' }
+    { id: 7, name: 'その他' }
   ]
 
   include ActiveHash::Associations
