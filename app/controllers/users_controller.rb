@@ -20,6 +20,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:nickname, :password, :encrypted_password, :profie).merge(user_id: current_user.id)
+    params.require(:user).permit(:nickname, :password, :encrypted_password, :profile).merge(user_id: current_user.id)
   end
 end
