@@ -227,3 +227,9 @@
 .inc {
   font-size: 13px;
 }
+
+.preview img {
+  width: 200px;
+  margin: 10px;
+  border: solid 3px silver;
+}

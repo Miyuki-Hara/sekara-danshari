@@ -81,6 +81,7 @@ https://sekara-danshari.herokuapp.com/
 * フロントエンド
   * HTML/CSS
   * Bootstrap
+  * Javascript
 * バックエンド
   * Ruby 2.6.5
   * rails 6.0.6
