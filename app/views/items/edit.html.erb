@@ -3,7 +3,7 @@
 <div class="items-sell-contents">
   <div class="items-sell-main">
     <h2 class="items-sell-title">断捨離の情報を編集</h2>
-    <%= form_with model: @item, id: 'new_post', local: true do |f| %>
+    <%= form_with model: @item, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -11,15 +11,8 @@
     <div class="img-upload">
       <div class="weight-bold-text">
         画像
-        <span class="indispensable">必須</span>
       </div>
-      <div id="previews"></div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード（変更しない場合は不要）
-        </p>
-        <%= f.file_field :image, id:"item-image" %>
-      </div>
+      <%= image_tag @item.image.variant(resize: '500x500') %>
     </div>
     <%# /画像 %>
     <%# 名前 %>
@@ -56,7 +49,7 @@
 
           <div class="weight-bold-text">
             手離した結果
-            <span class="indispensable">期日選択可</span>
+            <span class="indispensable">後日選択可</span>
           </div>
           <%= f.collection_select(:result_id, Result.all, :id, :name, {}, {class:"select-box", id:"item-result"}) %>
         </div>
