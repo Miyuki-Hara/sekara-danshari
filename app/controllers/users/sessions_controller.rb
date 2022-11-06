@@ -1,12 +1,12 @@
 class Users::SessionsController < ApplicationController
 end
+
 class Users::SessionsController < ApplicationController
   def new
   end
 
   def create
-    if
-      sign_in(:)
+    if sign_in(:user)
       redirect_to root_path
     else
       render 'new'
