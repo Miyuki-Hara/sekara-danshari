@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   before_action :basic_auth
 
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -16,6 +17,8 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in_user
-    redirect_to login_url unless logged_in?
+    unless logged_in?
+      redirect_to login_url
+    end
   end
 end
