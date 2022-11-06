@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
 
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
   root to: "items#index"
   resources :users, only: [:show, :update]
   resources :items do
