@@ -14,8 +14,4 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
   end
-
-  def logged_in_user
-    redirect_to login_url unless logged_in?
-  end
 end
