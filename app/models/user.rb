@@ -21,5 +21,5 @@ class User < ApplicationRecord
   validates :nickname, presence: true
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: VALID_PASSWORD_REGEX, message: 'Include both letters and numbers'
+  validates_format_of :password, with: VALID_PASSWORD_REGEX, message: 'は半角の英字と半角の数字を含めて設定してください'
 end

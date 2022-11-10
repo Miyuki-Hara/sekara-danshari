@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      item:
+        image: 画像
+        name: 名前
+        category_id: カテゴリー
+        let_go_way_id: 手離し方
+        let_go_reason_id: 手離した理由
