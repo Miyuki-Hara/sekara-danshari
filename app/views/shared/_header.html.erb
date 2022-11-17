@@ -47,5 +47,9 @@
           <%= form.submit "検索", class: "btn btn-info" %>
         <% end %>
 
+<%= search_form_for @q, url: photo_category_path do |f| %>
+    <%= f.collection_select :category_id_eq, Category.where.not(id: 0), :id, :name, include_blank: "カテゴリー検索" %>
+    <%= f.submit '検索' %>
+<% end %>
 
 </div>

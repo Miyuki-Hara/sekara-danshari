@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
+  before_action :search_category_item, only: [:index, :category, :hashtag, :search]
+
   def index
     @items = Item.includes(:user).order('created_at DESC')
   end
@@ -51,6 +53,12 @@ class ItemsController < ApplicationController
     @items = Item.search(params[:keyword])
   end
 
+  def category
+    @item = @q.result
+    category_id = params[:q][:category_id_eq]
+    @category = Category.find_by(id: category_id)
+  end
+
   private
 
   def item_params
@@ -60,5 +68,9 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def search_category_item
+    @q = item.ransack(params[:q])
   end
 end

@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update]
   resources :items do
 
-    collection do
-      get 'search'
-    end
+    get '/photo/category', to: "photos#category"
     
   end
 end
