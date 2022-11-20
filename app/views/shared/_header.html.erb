@@ -41,15 +41,15 @@
   </div>
 </nav>
 
-<div class="mx-3 my-3 float-right">
-        <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
-          <%= form.text_field :keyword, placeholder: "断捨離記録を検索する", class: "search-input" %>
-          <%= form.submit "検索", class: "btn btn-info" %>
-        <% end %>
-
-<%= search_form_for @q, url: photo_category_path do |f| %>
-    <%= f.collection_select :category_id_eq, Category.where.not(id: 0), :id, :name, include_blank: "カテゴリー検索" %>
-    <%= f.submit '検索' %>
-<% end %>
+<div class="mx-3 my-3">
+  <%= search_form_for Item.ransack(params[:q]), url: search_items_path, html: {class: "detiled-search-form"} do |f| %>
+      <%= f.text_field :name, placeholder: '商品名から探す', class: 'input-box' %>
+      <br>
+      <%= f.label :submit do %>
+        <input type="submit" value="検索" class="search-button">
+        <%= f.submit :submit, id: "q_submit", style: "display: none;"%>
+      <% end %>
+      <%= link_to '検索ページへ進む', search_items_path, class: "search-button-another text-dark text-decoration-none" %>
+    <% end %>
 
 </div>

@@ -1,36 +1,31 @@
 <%= render "shared/header" %>
-
-<div class='item-contents', id="view">
+<div class="search">
+<h3 class='title'>検索ページ</h3>
+<div>
+  <%= search_form_for @q, url: search_items_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.label :category_id_in, 'カテゴリー' %>
+      <br>
+      <%= f.collection_check_boxes(:category_id_in, Category.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+    <input type="submit" value="検索" class="search-button">
+    <%= f.submit :submit, id: "q_submit", style: "display: none;" %>
+  <% end %>
+</div>
+<div class='item-contents' id="view">
   <h2 class='title'>検索結果一覧</h2>
-    <ul class='item-lists'>
+  <ul class='item-lists' id="detailed-search-result">
     <% @items.each do |item| %>
       <li class='list'>
-        <%= link_to item_path(item) do %>
-        <div class='item-img-content'>
-        <%= image_tag item.image.variant(resize: '500x500'), class: "item-img" if item.image.attached? %>
+        <div class="posted-content">
+          <%= image_tag item.image.variant(resize: '500x500'), class: "item-img" if item.image.attached? %><br>
+          <%= item.name%><br>
+          <%= link_to '詳細', item_path(item.id)%>
         </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= item.name %>
-          </h3>
-          <div class='item-price'>
-            <span>手離し方：<%= item.let_go_way.name %></span>
-          </div>
-        </div>
-        <% end %>
       </li>
     <% end %>
   </ul>
 </div>
-
-<h2>カテゴリー <%= @category.name %></h2>
-  <ul>
-    <% @item.each do |item| %>
-      <li>
-          <%= image_tag photo.image if item.image.attached? %>
-      </li>
-    <% end %>
-  </ul>
 </div>
 
 <%= render "shared/footer" %>

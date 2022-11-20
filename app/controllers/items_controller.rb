@@ -3,8 +3,6 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
-  before_action :search_category_item, only: [:index, :category, :hashtag, :search]
-
   def index
     @items = Item.includes(:user).order('created_at DESC')
   end
@@ -50,13 +48,16 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword])
-  end
-
-  def category
-    @item = @q.result
-    category_id = params[:q][:category_id_eq]
-    @category = Category.find_by(id: category_id)
+    # params[:q]がnilではない且つ、params[:q][:name]がnilではないとき（商品名の欄が入力されているとき）
+    # if params[:q] && params[:q][:name]と同じような意味合い
+    if params[:q]&.dig(:name)
+      # squishメソッドで余分なスペースを削除する
+      squished_keywords = params[:q][:name].squish
+      ## 半角スペースを区切り文字として配列を生成し、paramsに入れる
+      params[:q][:name_cont_any] = squished_keywords.split(' ')
+    end
+    @q = Item.ransack(params[:q])
+    @items = @q.result
   end
 
   private
@@ -68,9 +69,5 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-  end
-
-  def search_category_item
-    @q = item.ransack(params[:q])
   end
 end

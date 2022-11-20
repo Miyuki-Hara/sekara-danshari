@@ -1,0 +1,66 @@
+.top-page-header{
+  display: flex;
+}
+
+.top-page-header{
+  display: flex;
+}
+
+.lists-right{
+  margin: 0;
+}
+
+.user_name, .logout, .login, .sign-up{
+  display: inline-block;
+  margin: 0 0 0 20px;
+}
+
+#item_search{
+  display: flex;
+}
+
+.input-box{
+  width: 300px;
+}
+
+.search-button{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* 整える */
+  width: 70px;
+  margin-left: 10px;
+  padding: 5px; /* 塗りの余白 */
+  font-size: 18px; /* フォントサイズ */
+  background-color: #1aa1ff; /* 背景色 */
+  color: black; /* テキストカラー */
+  cursor: pointer; /* カーソルを指マークに */
+  border-radius: 2px; /* 角の丸み */
+  border: 0; /* 枠線を消す */
+  transition: 0.3s; /* ホバーの変化を滑らかに */
+}
+.search-button:hover {
+  background-color: #54b5fb; /* 背景色 */
+}
+
+.search-button-another{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* 整える */
+  width: 160px;
+  margin-left: 10px;
+  padding: 5px; /* 塗りの余白 */
+  font-size: 18px; /* フォントサイズ */
+  background-color: #1aa1ff; /* 背景色 */
+  color: black; /* テキストカラー */
+  cursor: pointer; /* カーソルを指マークに */
+  border-radius: 2px; /* 角の丸み */
+  border: 0; /* 枠線を消す */
+  transition: 0.3s; /* ホバーの変化を滑らかに */
+}
+.search-button-another:hover {
+  background-color: #54b5fb; /* 背景色 */
+}

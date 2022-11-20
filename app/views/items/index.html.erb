@@ -76,8 +76,9 @@
           <p>手離すのを迷ったら、ほかの人が手離したものをみてみましょう。</p>
           <p>何を、どうして、どんな方法で手離したのか参考になるかもしれません。</p>
           <ul>
-            <li class="btn btn-info shadow"><%=link_to 'みんなの記録を見る', root_path(anchor: "view"), class: "text-dark text-decoration-none" %></li>
-            <li class="btn btn-info shadow"><%=link_to '自分の記録を残す', new_item_path, class: "text-dark text-decoration-none" %></li>
+            <li class="btn btn-info shadow"><%= link_to 'みんなの記録を見る', root_path(anchor: "view"), class: "text-dark text-decoration-none" %></li>
+            <li class="btn btn-info shadow"><%= link_to '自分の記録を残す', new_item_path, class: "text-dark text-decoration-none" %></li>
+            <li class="btn btn-info shadow"><%= link_to '検索', search_items_path, class: "text-dark text-decoration-none" %></li>
           </ul>
         </div>
         <div class="col-md-4">
