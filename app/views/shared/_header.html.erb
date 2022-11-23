@@ -43,7 +43,7 @@
 
 <div class="mx-3 my-3">
   <%= search_form_for Item.ransack(params[:q]), url: search_items_path, html: {class: "detiled-search-form"} do |f| %>
-      <%= f.text_field :name, placeholder: '商品名から探す', class: 'input-box' %>
+      <%= f.text_field :name, placeholder: '物品名から探す', class: 'input-box' %>
       <br>
       <%= f.label :submit do %>
         <input type="submit" value="検索" class="search-button">
